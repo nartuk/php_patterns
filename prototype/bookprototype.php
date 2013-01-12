@@ -3,9 +3,9 @@
 *  abstract class BookPrototype
 */
 abstract class BookPrototype {
-
-    protected $title;
-    protected $topic;
+    //make properties private not protected we have set and get method and any one can use it
+    private $title;
+    private $topic;
 	
     // this magic method is invoked each time a clone is called on the object variable    
     abstract function __clone();
@@ -21,5 +21,10 @@ abstract class BookPrototype {
     function getTopic() {
     	return $this->topic;
     }
+    
+    function setTopic($topicIn) {
+    	$this->topic = $topicIn;
+    }
+    
   }
 ?>
